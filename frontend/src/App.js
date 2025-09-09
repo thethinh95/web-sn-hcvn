@@ -16,7 +16,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 // ⚠️ Đổi URL này cho đúng với backend FastAPI bạn đã chạy
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://web-sn-hcvn-production.up.railway.app";
 
 export default function App() {
   const [tinhList, setTinhList] = useState([]);
