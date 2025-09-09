@@ -14,6 +14,16 @@ import {
 } from "recharts";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import L from "leaflet";
+
+// ✅ Fix icon mặc định không hiển thị khi build (production)
+delete L.Icon.Default.prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+  iconRetinaUrl:
+    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+});
 
 // ⚠️ Đổi URL này cho đúng với backend FastAPI bạn đã chạy
 const API_URL = "https://web-sn-hcvn-production.up.railway.app";
